@@ -1,9 +1,12 @@
 import {Post} from './Posts'
+import { Header } from './components/Header.JSX'
 
+import './global.css'
 function App() {
 
   return (
     <div>
+      <Header />
       <Post 
         produto="Enantato de Testosterona" 
         content="Isso aqui é bomba viu ?"
