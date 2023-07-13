@@ -1,8 +1,10 @@
 import {Post} from './Posts'
 import { Header } from './components/Header.JSX'
+import { Sidebar } from './components/Sidebar'
 
 import './global.css'
 import style from './App.module.css'
+
 
 function App() {
 
@@ -12,7 +14,7 @@ function App() {
 
       <div className={style.wrapper}>
         <aside>
-          Sidebar
+          <Sidebar></Sidebar>
         </aside>
 
         <main>
