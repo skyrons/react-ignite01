@@ -1,14 +1,28 @@
 .post {
     background-color: var(--gray-800);
     border-radius: 8px;
-    width: 52rem;
-    height: 32rem;
     padding: 2.5rem;
+}
+
+.post + .post {
+    margin-top: 2rem;
+}
+
+.post > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.post > header time { 
+    font-size: 0.875rem;
+    color: var(--gray-300);
+    line-height: 1.4rem;
 }
 
 .author {
     display: flex;
-    /* gap: 1rem; */
+    gap: 1rem;
 }
 
 .author .avatar { 
@@ -23,7 +37,7 @@
 .author .authorInfo {
     display: flex;
     flex-direction: column;
-    margin: 0.46rem 1rem 0.31rem; 
+    margin-top: 0.46rem ; 
 }
 
 .author .authorInfo strong {
@@ -38,4 +52,21 @@
     font-family: 'Roboto';
     font-size: 0.87rem;
     line-height: 1.2rem;
+}
+
+.content {
+    line-height: 1.6rem;
+    color: var(--gray-400);
+    font-weight: 0.75rem  ;
+}
+.content p {
+    margin-top: 3rem;
+}
+.content a {
+    font-weight: bold;
+    color: var(--green-500);
+    text-decoration: none;
+}
+.content a:hover {
+    color: var(--green-300);
 }

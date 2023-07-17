@@ -14,10 +14,12 @@ export function Post () {
                         <span>Web Developer</span>
                     </div>
                 </div>
+
+                <time title='Publicado em 13 de Maio de 2023 às 08:11' dateTime='2023-07-13 08:11:51'>
+                    Públicado há 1h
+                </time>
             </header>
-            <time title='Publicado em 13 de Maio de 2023 às 08:11' dateTime='2023-07-13 08:11:51'>
-                Públicado há 1h
-            </time>
+            
             <div className={style.content}>
             <p>Fala galeraa 👋</p>
 
@@ -25,7 +27,11 @@ export function Post () {
 
             <p>👉 <a href="#">jane.design/doctorcare</a></p>
 
-            <p><a href="">#novoprojeto</a> <a href="">#nlw</a> <a href="">#rocketseat</a></p>
+            <p> 
+                <a href="#">#novoprojeto</a>{' '}
+                <a href="#">#nlw</a>{' '} 
+                <a href="#">#rocketseat</a>{' '}
+            </p>
             </div>
         </article>
     )
