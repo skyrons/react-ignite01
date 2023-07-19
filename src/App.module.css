@@ -9,6 +9,7 @@
     align-items: flex-start;
 }
 
+/* responsive */
 @media (max-width: 768px) {
     html{
         font-size: 85%;
