@@ -13,7 +13,9 @@ import style from './Post.module.css'
 // eslint-disable-next-line react/prop-types
 export function Post ({ author, publishedAt, content }) {
 
-    const [comments, setComments] = useState ([])
+    const [comments, setComments] = useState ([
+        'FAKE NATTYYYYYYY '
+    ])
 
     const publishedDateFormat = format(publishedAt, "d 'de' LLLL 'as' HH:mm 'h'",{
         locale:ptBR
@@ -25,9 +27,10 @@ export function Post ({ author, publishedAt, content }) {
     })
 
     function handleCreateNewComment() {
-        event.preventDefault()
-        
-        setComments([...comments, comments.length + 1]);
+        event.preventDefault() 
+
+        const newComment = event.target.comment.value;
+        setComments([...comments, newComment])
     }
     return(
         <article className={style.post}>
@@ -65,7 +68,9 @@ export function Post ({ author, publishedAt, content }) {
 
                 <strong>Deixe seu feedback</strong>
 
-                <textarea placeholder='Escreva um comentário...'></textarea>
+                <textarea 
+                    name='comment'
+                    placeholder='Escreva um comentário...'/>
 
                 <footer>
                     <button type="submit">
@@ -74,11 +79,9 @@ export function Post ({ author, publishedAt, content }) {
                 </footer>
             </form>
             <div className={style.commentList}>
-                {comments.map(() =>{
-                    return <Comment />
-                    
-                })
-                }
+                {comments.map(comment => {
+                    return <Comment content={comment} />
+                })}
             </div>
         </article>
     )
