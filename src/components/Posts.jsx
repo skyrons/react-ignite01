@@ -17,6 +17,8 @@ export function Post ({ author, publishedAt, content }) {
         'FAKE NATTYYYYYYY '
     ])
 
+    const [newCommentText, setNewCommentText] = useState ('')
+
     const publishedDateFormat = format(publishedAt, "d 'de' LLLL 'as' HH:mm 'h'",{
         locale:ptBR
     })
@@ -29,9 +31,14 @@ export function Post ({ author, publishedAt, content }) {
     function handleCreateNewComment() {
         event.preventDefault() 
 
-        const newComment = event.target.comment.value;
-        setComments([...comments, newComment])
+        setComments([...comments, newCommentText])
+        setNewCommentText('')
     }
+
+    function handleNewCommentChanged() {
+        setNewCommentText(event.target.value)
+    }
+
     return(
         <article className={style.post}>
             <header>
@@ -70,7 +77,11 @@ export function Post ({ author, publishedAt, content }) {
 
                 <textarea 
                     name='comment'
-                    placeholder='Escreva um comentário...'/>
+                    placeholder='Escreva um comentário...'
+                    onChange={handleNewCommentChanged}
+                    value={newCommentText}
+                    />
+                    
 
                 <footer>
                     <button type="submit">
