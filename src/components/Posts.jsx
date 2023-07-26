@@ -14,7 +14,6 @@ import style from './Post.module.css'
 export function Post ({ author, publishedAt, content }) {
 
     const [comments, setComments] = useState ([
-        'FAKE NATTYYYYYYY '
     ])
 
     const [newCommentText, setNewCommentText] = useState ('')
